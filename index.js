@@ -16,9 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    
-
-    
     function getRandomFact(facts) {
         const randomIndex = Math.floor(Math.random() * facts.length);
         return facts[randomIndex].fact;
@@ -105,8 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     dislikeButton.addEventListener("click", () => {
         if (dislikeButton.style.color === "red") {            
             dislikeButton.style.color = "black";
-        } else {
-            
+
+        } else {            
             likeButton.style.color = "black";            
             dislikeButton.style.color = "red";
         }
