@@ -1,0 +1,114 @@
+body {
+    background-color: white;
+}
+
+.container {
+    background-color: rgb(209, 215, 236);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    width: 90%; /* Use a percentage for responsiveness */
+    max-width: 800px; /* Set a max-width to avoid stretching on large screens */
+    height: auto; /* Change height to auto for flexibility */
+    margin: 20px auto; /* Center container with auto margins */
+    padding: 20px; /* Add padding for breathing space */
+    border-radius: 40px;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+h1 {
+    color: rgb(19, 19, 126);
+    text-align: center; /* Center align heading */
+}
+
+#fact-display {
+    align-self: center;
+    text-align: justify;
+    border-style: groove;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 40px;
+    width: 100%; /* Use 100% width for responsiveness */
+    max-width: 600px; /* Set a max-width */
+    height: auto; /* Set height to auto to fit content */
+    padding: 20px;
+    font-size: 1.5em; /* Use relative font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#generate-button {
+    width: 100%; /* Use 100% width for the button */
+    max-width: 150px; /* Set a max-width for the button */
+    height: 40px;
+    background-color: rgb(43, 46, 245);
+    color: white;    
+    margin: 10px 0; /* Margin on top and bottom */
+}
+
+#like {
+    width: 40px; 
+    height: 40px;
+    color: blue;
+}
+
+#dislike {
+    width: 40px; 
+    height: 40px;
+    color: red;
+}
+
+#share {
+    width: 40px; 
+    height: 40px;
+    color: green;
+}
+.interact{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
+    margin: 10px 0; /* Margin on top and bottom */
+}
+
+.comment-next {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Use full width */
+    justify-content: space-between; /* Space between input and button */
+    margin-top: 10px; /* Margin on top */
+    gap: 40px;
+    
+}
+
+#comment {
+    flex: 1; /* Allow the input to take remaining space */
+    margin-right: 10px; /* Space between input and button */
+    height: 40px; /* Set a consistent height */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #fact-display {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+        padding: 15px; /* Reduce padding */
+    }
+
+    #generate-button {
+        width: 90%; /* Use percentage width */
+    }
+
+    .button-row {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center align buttons */
+    }
+
+    #comment {
+        margin-right: 0; /* Remove right margin for smaller screens */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+}
