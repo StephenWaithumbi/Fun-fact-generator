@@ -79,30 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
             addComment(comment); 
         }
     });
+    
 
     const likeButton = document.getElementById("like");
     const dislikeButton = document.getElementById("dislike");
 
     likeButton.addEventListener("click", () => {
-        if (likeButton.style.color === "blue") {
-            // If already liked, toggle back to black
+        if (likeButton.style.color === "blue") {            
             likeButton.style.color = "black";
-        } else {
-            // If dislike is active, remove dislike
-            dislikeButton.style.color = "black";
-            // Set like button to blue
+        } else {            
+            dislikeButton.style.color = "black";            
             likeButton.style.color = "blue";
         }
     });
 
     dislikeButton.addEventListener("click", () => {
-        if (dislikeButton.style.color === "red") {
-            // If already disliked, toggle back to black
+        if (dislikeButton.style.color === "red") {            
             dislikeButton.style.color = "black";
         } else {
-            // If like is active, remove like
-            likeButton.style.color = "black";
-            // Set dislike button to red
+            
+            likeButton.style.color = "black";            
             dislikeButton.style.color = "red";
         }
     });
