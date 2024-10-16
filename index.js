@@ -4,10 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     async function fetchFacts() {
-        const response = await fetch('./database.json'); 
-        const data = await response.json();
-        return data.RandomFacts;
+        try {
+            const response = await fetch('https://database-for-random-facts.onrender.com/RandomFacts');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            return data; 
+        } catch (error) {
+            console.error("Failed to fetch facts:", error);
+        }
     }
+    
+    
 
     
     function getRandomFact(facts) {
