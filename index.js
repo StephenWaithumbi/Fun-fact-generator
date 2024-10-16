@@ -38,6 +38,46 @@ document.addEventListener("DOMContentLoaded", () => {
     shareButton.addEventListener("click", () => {
         const currentFact = factDisplay.textContent; 
         shareOnWhatsApp(currentFact); 
-    });  
+    });
+
+    const commentInput = document.getElementById("comment");
+    const commentsSection = document.getElementById("comments");
+    const form = document.querySelector(".form");
+
+    
+    function addComment(commentText) {
+        
+        const commentContainer = document.createElement("div");
+        commentContainer.classList.add("comment-container");
+
+        
+        const commentParagraph = document.createElement("p");
+        commentParagraph.textContent = commentText;
+
+        
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "x";
+        deleteButton.classList.add("delete-button");
+        
+        commentContainer.appendChild(commentParagraph);
+        commentParagraph.appendChild(deleteButton);
+        
+        commentsSection.appendChild(commentContainer);
+        
+        commentInput.value = '';
+        
+        deleteButton.addEventListener("click", () => {
+            commentContainer.remove();
+        });
+    }
+
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+        const comment = commentInput.value.trim(); 
+        if (comment) {
+            addComment(comment); 
+        }
+    });
 
 });
