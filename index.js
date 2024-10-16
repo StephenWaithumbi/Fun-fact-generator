@@ -80,4 +80,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const likeButton = document.getElementById("like");
+    const dislikeButton = document.getElementById("dislike");
+
+    likeButton.addEventListener("click", () => {
+        if (likeButton.style.color === "blue") {
+            // If already liked, toggle back to black
+            likeButton.style.color = "black";
+        } else {
+            // If dislike is active, remove dislike
+            dislikeButton.style.color = "black";
+            // Set like button to blue
+            likeButton.style.color = "blue";
+        }
+    });
+
+    dislikeButton.addEventListener("click", () => {
+        if (dislikeButton.style.color === "red") {
+            // If already disliked, toggle back to black
+            dislikeButton.style.color = "black";
+        } else {
+            // If like is active, remove like
+            likeButton.style.color = "black";
+            // Set dislike button to red
+            dislikeButton.style.color = "red";
+        }
+    });
+
 });
